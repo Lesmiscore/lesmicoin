@@ -37,10 +37,6 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
     genesis.hashPrevBlock.SetNull();
     genesis.hashMerkleRoot = BlockMerkleRoot(genesis);
 
-    arith_uint256 hashTarget = arith_uint256().SetCompact(genesis.nBits);
-    std::cout << hashTarget.ToString() << '\n';
-    while (UintToArith256(genesis.GetHash()) > hashTarget) ++genesis.nNonce;
-
     return genesis;
 }
 
@@ -71,9 +67,9 @@ public:
     CMainParams() {
         strNetworkID = "main";
         consensus.nSubsidyHalvingInterval = 2592000; // about 30 days regardless of month
-        consensus.BIP16Exception = uint256S("0x00000000000002dc756eebf4f49723ed8d30cc28a5f108eb94b1ba88ac4f9c22");
+        consensus.BIP16Exception = uint256S("0x00766c2704b839279143f2235a179b7444e13a69279aa3bcb597b93b169afe15");
         consensus.BIP34Height = 0;
-        consensus.BIP34Hash = uint256S("0x000000000000024b89b42a942fe0d9fea3bb44ab7bd1b19115dd6a759c0808b8");
+        consensus.BIP34Hash = uint256S("0x00766c2704b839279143f2235a179b7444e13a69279aa3bcb597b93b169afe15");
         consensus.BIP65Height = 0;
         consensus.BIP66Height = 0;
         consensus.powLimit = uint256S("0x3fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
@@ -115,15 +111,12 @@ public:
         nDefaultPort = 10128; // last 5 chars of 20010128
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(GetTime(), 2083236893, 0x1e0ffff0, 1, 0);
-        std::cout << "genesis.nTime = " << genesis.nTime << '\n';
-        std::cout << "genesis.nBits = " << genesis.nBits << '\n';
-        std::cout << "genesis.nNonce = " << genesis.nNonce << '\n';
-        std::cout << "genesis.GetHash = " << genesis.GetHash().ToString() << '\n';
+        genesis = CreateGenesisBlock(1538240223, 662962983, 0x2000ffff, 1, 0);
+        std::cout << "genesis.hashMerkleRoot = " << genesis.hashMerkleRoot.ToString() << '\n';
 
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"));
-        assert(genesis.hashMerkleRoot == uint256S("0x4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00766c2704b839279143f2235a179b7444e13a69279aa3bcb597b93b169afe15"));
+        assert(genesis.hashMerkleRoot == uint256S("0x320e1376a3819b1cc75cd0ef985f6157f505e7316341b98059fb4174f3ed21e5"));
 
         // Note that of those which support the service bits prefix, most only support a subset of
         // possible options.
@@ -207,7 +200,7 @@ public:
         pchMessageStart[1] = 0x11;
         pchMessageStart[2] = 0x09;
         pchMessageStart[3] = 0x07;
-        nDefaultPort = 18333;
+        nDefaultPort = 20128;
         nPruneAfterHeight = 1000;
 
         genesis = CreateGenesisBlock(1296688602, 414098458, 0x1d00ffff, 1, 50 * COIN);

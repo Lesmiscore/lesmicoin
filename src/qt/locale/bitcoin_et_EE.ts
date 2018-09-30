@@ -104,7 +104,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>LesmicoinGUI</name>
     <message>
         <source>Synchronizing with network...</source>
         <translation>Võrguga sünkroniseerimine...</translation>
@@ -130,8 +130,8 @@
         <translation>Kõvakettal olevate plokkide reindekseerimine...</translation>
     </message>
     <message>
-        <source>Bitcoin</source>
-        <translation>Bitcoin</translation>
+        <source>Lesmicoin</source>
+        <translation>Lesmicoin</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -265,8 +265,8 @@
         <translation>Tere tulemast</translation>
     </message>
     <message>
-        <source>Bitcoin</source>
-        <translation>Bitcoin</translation>
+        <source>Lesmicoin</source>
+        <translation>Lesmicoin</translation>
     </message>
     <message>
         <source>Error</source>
@@ -760,8 +760,8 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>Bitcoin Core</translation>
+        <source>Lesmicoin Core</source>
+        <translation>Lesmicoin Core</translation>
     </message>
     <message>
         <source>Information</source>

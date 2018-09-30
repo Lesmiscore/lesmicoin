@@ -62,12 +62,12 @@
         <translation>Adresa na koju se prima</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Ovo su Vaše Bitcoin adrese na koju se vrše uplate. Uvek proverite iznos i prijemnu adresu pre slanja novčića.</translation>
+        <source>These are your Lesmicoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Ovo su Vaše Lesmicoin adrese na koju se vrše uplate. Uvek proverite iznos i prijemnu adresu pre slanja novčića.</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Ovo su Vaše Bitcoin adrese za primanje uplata. Preporučuje se upotreba nove adrese za svaku transakciju.</translation>
+        <source>These are your Lesmicoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Ovo su Vaše Lesmicoin adrese za primanje uplata. Preporučuje se upotreba nove adrese za svaku transakciju.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -232,7 +232,7 @@
     </message>
 </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>LesmicoinGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Potpišite &amp;poruka...</translation>
@@ -338,8 +338,8 @@
         <translation>Ponovo obeležavam blokove na disku...</translation>
     </message>
     <message>
-        <source>Send coins to a Bitcoin address</source>
-        <translation>Pošalji novčiće na Bitcoin adresu</translation>
+        <source>Send coins to a Lesmicoin address</source>
+        <translation>Pošalji novčiće na Lesmicoin adresu</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -362,8 +362,8 @@
         <translation>&amp;Proveri poruku...</translation>
     </message>
     <message>
-        <source>Bitcoin</source>
-        <translation>Bitcoin</translation>
+        <source>Lesmicoin</source>
+        <translation>Lesmicoin</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -390,12 +390,12 @@
         <translation>Enkriptuj privatne ključeve novčanika</translation>
     </message>
     <message>
-        <source>Sign messages with your Bitcoin addresses to prove you own them</source>
-        <translation>Potpišite poruke sa svojim Bitcoin adresama da biste dokazali njihovo vlasništvo</translation>
+        <source>Sign messages with your Lesmicoin addresses to prove you own them</source>
+        <translation>Potpišite poruke sa svojim Lesmicoin adresama da biste dokazali njihovo vlasništvo</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
-        <translation>Proverite poruke da biste utvrdili sa kojim Bitcoin adresama su potpisane</translation>
+        <source>Verify messages to ensure they were signed with specified Lesmicoin addresses</source>
+        <translation>Proverite poruke da biste utvrdili sa kojim Lesmicoin adresama su potpisane</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -519,8 +519,8 @@
 <context>
     <name>Intro</name>
     <message>
-        <source>Bitcoin</source>
-        <translation>Bitcoin</translation>
+        <source>Lesmicoin</source>
+        <translation>Lesmicoin</translation>
     </message>
     <message>
         <source>Error</source>
@@ -694,8 +694,8 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>Bitcoin Core</translation>
+        <source>Lesmicoin Core</source>
+        <translation>Lesmicoin Core</translation>
     </message>
     <message>
         <source>Information</source>

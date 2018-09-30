@@ -62,12 +62,12 @@
         <translation>Ontvang adresse</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Dit is jou Bitcoin-adresse vir die stuur van betalings. Kontroleer altyd die bedrag en die ontvangsadres voordat u munte stuur.</translation>
+        <source>These are your Lesmicoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Dit is jou Lesmicoin-adresse vir die stuur van betalings. Kontroleer altyd die bedrag en die ontvangsadres voordat u munte stuur.</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Dit is jou Bitcoin-adresse vir die stuur van betalings. Kontroleer altyd die bedrag en die ontvangsadres voordat jy munte stuur.</translation>
+        <source>These are your Lesmicoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Dit is jou Lesmicoin-adresse vir die stuur van betalings. Kontroleer altyd die bedrag en die ontvangsadres voordat jy munte stuur.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -232,7 +232,7 @@
     </message>
 </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>LesmicoinGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Teken &amp;Boodskap</translation>
@@ -330,8 +330,8 @@
         <translation>Klik om netwerk aktiwiteit weer aan te skakel.</translation>
     </message>
     <message>
-        <source>Send coins to a Bitcoin address</source>
-        <translation>Stuur muntstukke na 'n Bitcoin adres</translation>
+        <source>Send coins to a Lesmicoin address</source>
+        <translation>Stuur muntstukke na 'n Lesmicoin adres</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -350,8 +350,8 @@
         <translation>&amp;Verifieer boodskap...</translation>
     </message>
     <message>
-        <source>Bitcoin</source>
-        <translation>Bitcoin</translation>
+        <source>Lesmicoin</source>
+        <translation>Lesmicoin</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -378,12 +378,12 @@
         <translation>Versleutel die private sleutels wat aan u beursie behoort</translation>
     </message>
     <message>
-        <source>Sign messages with your Bitcoin addresses to prove you own them</source>
-        <translation>Teken boodskappe met u Bitcoin adresse om te bewys dat u hul besit</translation>
+        <source>Sign messages with your Lesmicoin addresses to prove you own them</source>
+        <translation>Teken boodskappe met u Lesmicoin adresse om te bewys dat u hul besit</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
-        <translation>Bevestig boodskappe om te verseker dat hulle geteken was met gespesifiseerde Bitcoin adresse</translation>
+        <source>Verify messages to ensure they were signed with specified Lesmicoin addresses</source>
+        <translation>Bevestig boodskappe om te verseker dat hulle geteken was met gespesifiseerde Lesmicoin adresse</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -713,8 +713,8 @@
         <translation>Welkom by %1.</translation>
     </message>
     <message>
-        <source>Bitcoin</source>
-        <translation>Bitcoin</translation>
+        <source>Lesmicoin</source>
+        <translation>Lesmicoin</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>

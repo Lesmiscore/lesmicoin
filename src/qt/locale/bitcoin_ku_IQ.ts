@@ -40,7 +40,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>LesmicoinGUI</name>
     <message>
         <source>&amp;Send</source>
         <translation>&amp;ناردن</translation>

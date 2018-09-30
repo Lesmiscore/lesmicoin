@@ -141,7 +141,7 @@ public:
 
         checkpointData = {
             {
-
+                {0, uint256S("0x00766c2704b839279143f2235a179b7444e13a69279aa3bcb597b93b169afe15")},
             }
         };
 
@@ -229,9 +229,7 @@ public:
 
 
         checkpointData = {
-            {
-                {546, uint256S("000000002a936ca763904c3c35fce2f3556c559c0214345d31b1bcebf76acb70")},
-            }
+            {}
         };
 
         chainTxData = ChainTxData{

@@ -1920,8 +1920,8 @@ static UniValue getblockstats(const JSONRPCRequest& request)
     ret_all.pushKV("medianfee", CalculateTruncatedMedian(fee_array));
     ret_all.pushKV("mediantime", pindex->GetMedianTimePast());
     ret_all.pushKV("mediantxsize", CalculateTruncatedMedian(txsize_array));
-    ret_all.pushKV("minfee", (minfee == MAX_MONEY) ? 0 : minfee);
-    ret_all.pushKV("minfeerate", (minfeerate == MAX_MONEY) ? 0 : minfeerate);
+    ret_all.pushKV("minfee", 0);
+    ret_all.pushKV("minfeerate", 0);
     ret_all.pushKV("mintxsize", mintxsize == MAX_BLOCK_SERIALIZED_SIZE ? 0 : mintxsize);
     ret_all.pushKV("outs", outputs);
     ret_all.pushKV("subsidy", GetBlockSubsidy(pindex->nHeight, Params().GetConsensus()));

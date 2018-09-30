@@ -173,8 +173,6 @@ bool CheckTransaction(const CTransaction& tx, CValidationState &state, bool fChe
     {
         if (txout.nValue < 0)
             return state.DoS(100, false, REJECT_INVALID, "bad-txns-vout-negative");
-        if (txout.nValue > MAX_MONEY)
-            return state.DoS(100, false, REJECT_INVALID, "bad-txns-vout-toolarge");
         nValueOut += txout.nValue;
         if (!MoneyRange(nValueOut))
             return state.DoS(100, false, REJECT_INVALID, "bad-txns-txouttotal-toolarge");

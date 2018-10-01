@@ -1,6 +1,8 @@
 Lesmicoin Core integration/staging tree
 =====================================
 
+![Lesmicoin](https://github.com/nao20010128nao/lesmicoin/raw/master/lesmicoin.svg)
+
 # Specs
 - Init. Reward: 10000 WTF
 - Decimals: 8

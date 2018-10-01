@@ -1,5 +1,19 @@
-Bitcoin Core integration/staging tree
+Lesmicoin Core integration/staging tree
 =====================================
+
+# Specs
+- Block Time: 1 SECOND
+- Multiply rate: 1 month (It's not subsidy!)
+  - Max Supply is unlimited!
+- CoinBase transaction can be spent without maturing
+- Alternating Diff algorithm per 1 day
+  - Bitcoin Native -> LWMA -> DGW -> KGW
+- SHA256d! Use ASIC! Fever!
+- Unit: `WTF`
+- Prefixes:
+  - Bech32 HRP: `lesmi`
+  - P2PKH: `Q`
+  - P2SH: `s`
 
 [![Build Status](https://travis-ci.org/bitcoin/bitcoin.svg?branch=master)](https://travis-ci.org/bitcoin/bitcoin)
 

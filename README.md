@@ -19,7 +19,7 @@ Lesmicoin Core integration/staging tree
   - P2PKH: `Q`
   - P2SH: `s`
 - No premine (Except for testing, but the chain was abandoned)
-  - Even the Genesis block have no value (unless it can't be spent)
+  - Even the Genesis block have no value (even it can't be spent)
 
 # Warning and Notices
 We do not pre-sale or premine, because this coin must not have any price.

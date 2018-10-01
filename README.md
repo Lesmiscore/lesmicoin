@@ -2,6 +2,8 @@ Lesmicoin Core integration/staging tree
 =====================================
 
 # Specs
+- Init. Reward: 10000 WTF
+- Decimals: 8
 - Block Time: 1 SECOND
 - Multiply rate: 1 month (It's not subsidy!)
   - Max Supply is unlimited!

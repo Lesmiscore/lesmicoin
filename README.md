@@ -1,7 +1,7 @@
 Lesmicoin Core integration/staging tree
 =====================================
 
-![Lesmicoin](https://github.com/nao20010128nao/lesmicoin/raw/master/lesmicoin.svg)
+<img src="https://cdn.rawgit.com/nao20010128nao/lesmicoin/master/lesmicoin.svg" width="300px">
 
 # Specs
 - Init. Reward: 10000 WTF
@@ -18,10 +18,16 @@ Lesmicoin Core integration/staging tree
   - Bech32 HRP: `lesmi`
   - P2PKH: `Q`
   - P2SH: `s`
+- No premine (Except for testing, but the chain was abandoned)
+  - Even the Genesis block have no value (unless it can't be spent)
 
-[![Build Status](https://travis-ci.org/bitcoin/bitcoin.svg?branch=master)](https://travis-ci.org/bitcoin/bitcoin)
+# Warning and Notices
+We do not pre-sale or premine, because this coin must not have any price.
+You can request listing to the exchange by yourself, but dev don't support.    
+This coin is made for fulfilling my crazy mind. Not made for investing, so MUST NOT INVEST for this coin.    
+Think of this coin as a scam, or a shitcoin. Mine this coin if you don't wish to earn.    
+Dev is welcome to use this coin/chain for testing vulnerabilities existing in the application.
 
-https://bitcoincore.org
 
 What is Bitcoin?
 ----------------

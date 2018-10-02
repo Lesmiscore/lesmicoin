@@ -257,12 +257,16 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits, const Consensus::Params&
     bnTarget.SetCompact(nBits, &fNegative, &fOverflow);
 
     // Check range
-    if (fNegative || bnTarget == 0 || fOverflow || bnTarget > UintToArith256(params.powLimit))
+    if (fNegative || bnTarget == 0 || fOverflow/* || bnTarget > UintToArith256(params.powLimit)*/) {
+        std::cout << "Failed at #1" << std::endl;
         return false;
+    }
 
     // Check proof of work matches claimed amount
-    if (UintToArith256(hash) > bnTarget)
+    if (UintToArith256(hash) > bnTarget) {
+        std::cout << "Failed at #2" << std::endl;
         return false;
+    }
 
     return true;
 }

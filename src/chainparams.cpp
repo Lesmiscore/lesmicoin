@@ -37,12 +37,6 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
     genesis.hashPrevBlock.SetNull();
     genesis.hashMerkleRoot = BlockMerkleRoot(genesis);
 
-    /*
-    arith_uint256 hashTarget = arith_uint256().SetCompact(genesis.nBits);
-    std::cout << hashTarget.ToString() << '\n';
-    while (UintToArith256(genesis.GetHash()) > hashTarget) ++genesis.nNonce;
-    */
-
     return genesis;
 }
 
@@ -78,7 +72,7 @@ public:
         consensus.BIP34Hash = uint256S("0x00766c2704b839279143f2235a179b7444e13a69279aa3bcb597b93b169afe15");
         consensus.BIP65Height = 0;
         consensus.BIP66Height = 0;
-        consensus.powLimit = uint256S("0x3fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.powLimit = uint256S("0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 60;
         consensus.nPowTargetSpacing = 1; // ONE SECOND
         consensus.fPowAllowMinDifficultyBlocks = false;

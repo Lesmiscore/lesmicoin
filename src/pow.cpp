@@ -50,13 +50,12 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     const CBlockIndex* pindexFirst = pindexLast->GetAncestor(nHeightFirst);
     assert(pindexFirst);
 
-    int index = ((int)(pindexLast->nHeight / 86400)) % 4;
+    int index = ((int)(pindexLast->nHeight / 86400)) % 3;
 
     switch(index) {
         case 0: return CalculateNextWorkRequired     (pindexLast, pindexFirst->GetBlockTime(), params);
         case 1: return LwmaCalculateNextWorkRequired (pindexLast, params);
         case 2: return DarkGravityWave               (pindexLast, pblock, params);
-        case 3: return GetNextWorkRequired_V2        (pindexLast, pblock, params);
     }
 }
 
@@ -121,62 +120,6 @@ unsigned int LwmaCalculateNextWorkRequired(const CBlockIndex* pindexLast, const 
     return next_target.GetCompact();
 }
 
-
-unsigned int KimotoGravityWell(const CBlockIndex* pindexLast, const CBlockHeader *pblock, uint64_t TargetBlocksSpacingSeconds, uint64_t PastBlocksMin, uint64_t PastBlocksMax, const Consensus::Params& params) {
-	/* current difficulty formula, megacoin - kimoto gravity well */
-	const CBlockIndex  *BlockLastSolved				= pindexLast;
-	const CBlockIndex  *BlockReading				= pindexLast;
-	const CBlockHeader *BlockCreating				= pblock;
-	uint64_t			PastBlocksMass				= 0;
-	int64_t				PastRateActualSeconds		= 0;
-	int64_t				PastRateTargetSeconds		= 0;
-	double				PastRateAdjustmentRatio		= double(1);
-	arith_uint256       PastDifficultyAverage;
-	arith_uint256		PastDifficultyAveragePrev;
-	double				EventHorizonDeviation;
-	double				EventHorizonDeviationFast;
-	double				EventHorizonDeviationSlow;
-
-    if (BlockLastSolved == NULL || BlockLastSolved->nHeight == 0 || (uint64_t)BlockLastSolved->nHeight < PastBlocksMin) { return UintToArith256(params.powLimit).GetCompact(); }
-
-	for (unsigned int i = 1; BlockReading && BlockReading->nHeight > 0; i++) {
-		if (PastBlocksMax > 0 && i > PastBlocksMax) { break; }
-		PastBlocksMass++;
-
-		PastDifficultyAverage.SetCompact(BlockReading->nBits);
-        if (i != 1) {
-            PastDifficultyAverage = ((PastDifficultyAverage - PastDifficultyAveragePrev) / i) + PastDifficultyAveragePrev;
-        }
-		PastDifficultyAveragePrev = PastDifficultyAverage;
-
-		PastRateActualSeconds			= BlockLastSolved->GetBlockTime() - BlockReading->GetBlockTime();
-		PastRateTargetSeconds			= TargetBlocksSpacingSeconds * PastBlocksMass;
-		PastRateAdjustmentRatio			= double(1);
-		if (PastRateActualSeconds < 0) { PastRateActualSeconds = 0; }
-		if (PastRateActualSeconds != 0 && PastRateTargetSeconds != 0) {
-		PastRateAdjustmentRatio			= double(PastRateTargetSeconds) / double(PastRateActualSeconds);
-		}
-		EventHorizonDeviation			= 1 + (0.7084 * std::pow((double(PastBlocksMass)/double(144)), -1.228));
-		EventHorizonDeviationFast		= EventHorizonDeviation;
-		EventHorizonDeviationSlow		= 1 / EventHorizonDeviation;
-
-		if (PastBlocksMass >= PastBlocksMin) {
-			if ((PastRateAdjustmentRatio <= EventHorizonDeviationSlow) || (PastRateAdjustmentRatio >= EventHorizonDeviationFast)) { assert(BlockReading); break; }
-		}
-		if (BlockReading->pprev == NULL) { assert(BlockReading); break; }
-		BlockReading = BlockReading->pprev;
-	}
-
-	arith_uint256 bnNew(PastDifficultyAverage);
-	if (PastRateActualSeconds != 0 && PastRateTargetSeconds != 0) {
-		bnNew *= PastRateActualSeconds;
-		bnNew /= PastRateTargetSeconds;
-	}
-    if (bnNew > UintToArith256(params.powLimit)) { bnNew = UintToArith256(params.powLimit); }
-
-	return bnNew.GetCompact();
-}
-
 unsigned int DarkGravityWave(const CBlockIndex* pindexLast, const CBlockHeader *pblock, const Consensus::Params& params) {
     /* current difficulty formula, dash - DarkGravity v3, written by Evan Duffield - evan@dashpay.io */
     const CBlockIndex *BlockLastSolved = pindexLast;
@@ -231,21 +174,6 @@ unsigned int DarkGravityWave(const CBlockIndex* pindexLast, const CBlockHeader *
     }
 
     return bnNew.GetCompact();
-}
-
-unsigned int GetNextWorkRequired_V2(const CBlockIndex* pindexLast, const CBlockHeader *pblock, const Consensus::Params& params)
-{
-	static const int64_t	BlocksTargetSpacing			= params.nPowTargetSpacing;
-	unsigned int			TimeDaySeconds				= 60 * 60 * 24;
-	int64_t					PastSecondsMin				= TimeDaySeconds * 0.25;
-	int64_t					PastSecondsMax				= TimeDaySeconds * 7;
-	uint64_t				PastBlocksMin				= PastSecondsMin / BlocksTargetSpacing;
-	uint64_t				PastBlocksMax				= PastSecondsMax / BlocksTargetSpacing;	
-
-    if (params.fPowNoRetargeting)
-        return pindexLast->nBits;
-
-	return KimotoGravityWell(pindexLast, pblock, BlocksTargetSpacing, PastBlocksMin, PastBlocksMax, params);
 }
 
 bool CheckProofOfWork(uint256 hash, unsigned int nBits, const Consensus::Params& params)

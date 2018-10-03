@@ -68,7 +68,7 @@ public:
         strNetworkID = "main";
         consensus.nSubsidyHalvingInterval = 2592000; // about 30 days regardless of month
         consensus.BIP16Exception = uint256S("0x00766c2704b839279143f2235a179b7444e13a69279aa3bcb597b93b169afe15");
-        consensus.BIP34Height = 0;
+        consensus.BIP34Height = UINT16_MAX;
         consensus.BIP34Hash = uint256S("0x00766c2704b839279143f2235a179b7444e13a69279aa3bcb597b93b169afe15");
         consensus.BIP65Height = 0;
         consensus.BIP66Height = 0;
@@ -125,8 +125,8 @@ public:
         // release ASAP to avoid it where possible.
         vSeeds.emplace_back("illegal.localhost");
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,23); // Q
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,37); // e
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,23); // A
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,37); // G
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,128);
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x88, 0xB2, 0x1E};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x88, 0xAD, 0xE4};

@@ -11,7 +11,7 @@ Lesmicoin Core integration/staging tree
   - Max Supply is unlimited!
 - CoinBase transaction can be spent without maturing
 - Alternating Diff algorithm per 1 day
-  - Bitcoin Native -> LWMA -> DGW -> KGW
+  - Bitcoin Native -> LWMA -> DGW
 - SHA256d! Use ASIC! Fever!
 - Unit: `WTF`
 - Prefixes:

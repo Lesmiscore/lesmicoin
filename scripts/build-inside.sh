@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 cd /tmp
-git clone https://github.com/nao20010128nao/lesmicoin
+git clone /tmp/repo/.git lesmicoin
 cd lesmicoin
 git checkout "$BRANCH"
 
